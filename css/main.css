@@ -8,4 +8,28 @@
  
 body {
 	background-color: whitesmoke;
+	font-family: Verdana;
+}
+
+@font-face {
+	font-family: 'Poiret One', cursive;
+	src: url("../fonts/PoiretOne-Regular.ttf") format('truetype');
+}
+
+.fa-heart-o {
+	color: red;
+}
+
+#fire {
+    font-size: 28px;
+
+    margin-left: 10px;
+}
+
+header a:hover, a:active{
+    text-decoration: none;
+}
+
+nav {
+    background-color: #5CACC4;
 }
