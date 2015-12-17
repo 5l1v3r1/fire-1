@@ -1,8 +1,6 @@
 /*
- *
- *
- *
- *
+ * FIRE local CSS3 file
+ * Copyright (c) 2015, Adjamilton Junior (jr@ieee.org)
  *
  */
  
@@ -25,10 +23,18 @@ body {
     margin-left: 10px;
 }
 
-header a:hover, a:active{
+a:hover, a:active, a:visited, a:link{
     text-decoration: none;
 }
 
 nav {
     background-color: #5CACC4;
+}
+
+table {
+    font-family: "Courier";
+}
+
+table td {
+    color: rgb(51, 122, 183);
 }
