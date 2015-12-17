@@ -44,17 +44,20 @@
                     <thead>
                         <tr>
                             <th>Filename</th>
-                            <th>Size</th>
-                            <th>Modified</th>
+                            <th>Date Modified</th>
+                            <th style="align: right;">Size</th>
                             <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $path = '/Users/ajr/Downloads/Zipped/';
+                            require_once "functions/get-file-size.php";
+                            require_once "functions/get-file-type.php";
+                            $ini_array = parse_ini_file("config.ini");
+                            $path = $ini_array['path'];
 
                             // Files to be ignored
-                            $ignoredFiles = array(".DS_Store");
+                            $ignoredFiles = array(".DS_Store",".localized");
 
                             // scandir function automatically sort the array
                             if ( $files = scandir($path) ) {
@@ -62,15 +65,17 @@
                                     if ( is_file($path.$file) && !in_array($file,$ignoredFiles) ) {
                                         echo "<tr>";
                                         echo "<td><a href='download.php?file=$path$file'>$file</a></td>";
-                                        echo "<td>" . number_format(filesize($path.$file), 2, '.', '') . "</td>";
-                                        echo "<td>" . date ("F d Y H:i:s",filemtime($path.$file)) . "</td>";
-                                        echo "<td>" . mime_content_type($path.$file). "</td>";
+                                        echo "<td>" . date ("M d Y H:i:s",filemtime($path.$file)) . "</td>";
+                                        echo "<td align='right'>" . getFileSize($path.$file) . "</td>";
+                                        echo "<td class='text-center'>" . getFileMimeType($path.$file). "</td>";
+                                        echo "</tr>";
                                     }
+
                                 // unsetting variables
                                 unset($path,$file);
                             }
                             else {
-                                include("error.php");
+                                echo "<tr><td class='rowspan: 4'>File not found</td></tr>";
                             }
                         ?>
 
