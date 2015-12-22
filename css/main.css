@@ -14,7 +14,7 @@ body {
 	src: url("../fonts/PoiretOne-Regular.ttf") format('truetype');
 }
 
-.fa-heart-o {
+.fa-heart {
 	color: red;
 }
 
@@ -63,7 +63,35 @@ hr {
     margin-top: 5px;
     margin-right: 3px;
 }
-.drop-shadow {
-    box-shadow: 0 4px 1px -3px;
+
+#panel-files {
+    margin-top: 8%;
 }
 
+footer {
+    margin-top: 3%;
+}
+
+table {
+    max-width: 100%;
+    table-layout: fixed;
+}
+
+#filename {
+    max-width: 50%;
+
+}
+
+table td, th {
+    word-wrap: break-word;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.breadcrumb {
+    display: inline;
+}
+
+hr {
+    margin-top: 10px;
+}

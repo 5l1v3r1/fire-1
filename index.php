@@ -27,7 +27,7 @@
 	</head>
 	<body>
 		<header>
-            <nav class="container-fluid navbar navbar-default drop-shadow">
+            <nav class="container-fluid navbar navbar-default drop-shadow navbar-fixed-top">
 			<a href="index.php"><span id="fire">F</span><i class="fa fa-fire fa-2x"></i><span id="fire">RE</span></a>
                 <form id="login" class="form-inline navbar-right">
                     <div class="form-group">
@@ -40,13 +40,18 @@
             </form></nav>
 		</header>
 		
-		<section class="row">
+		<section id="panel-files" class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
              <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row container">
-                        <i class="fa fa-folder-open-o"></i> <a href="">Public/</a>
+                        <i class="fa fa-folder-open-o"></i>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Public</a></li>
+                            <!--<li><a href="#">Jingles</a></li>-->
+                            <li><a href="#">docs</a></li>
+                        </ol>
                     </div>
                     <hr>
                     <div class="row">
@@ -83,10 +88,10 @@
                 <div class="panel-body">
                 <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <th>Filename <i class="fa fa-sort-desc"></i></th>
-                            <th class="text-right">Modified</th>
-                            <th class="text-right">Size</th>
+                        <tr style="width: 100%">
+                            <th style="width: 65%">Filename <i class="fa fa-sort-desc"></i></th>
+                            <th style="width: 20%" class="text-right">Modified</th>
+                            <th style="width: 10%" class="text-right">Size</th>
                             <!--<th class="text-center">Type</th>-->
                         </tr>
                     </thead>
@@ -110,9 +115,9 @@
                                 foreach ($files as $file)
                                     if ( is_file($path.$file) && !in_array($file,$ignoredFiles) ) {
                                         echo "<tr>";
-                                        echo "<td style='vertical-align: middle'><a href='functions/sendfile.php?file=$path".str_replace(' ', '%20', $file) . "'>" . getFileMimeType($path.$file) . " $file</a></td>";
-                                        echo "<td style='vertical-align: middle' class='text-right'>" . date ("M d Y H:i:s",filemtime($path.$file)) . "</td>";
-                                        echo "<td style='vertical-align: middle' class='text-right'>" . getFileSize($path.$file) . "</td>";
+                                        echo "<td id='filename' style='vertical-align: middle; width: 50%'><a href='functions/sendfile.php?file=$path".str_replace(' ', '%20', $file) . "'>" . getFileMimeType($path.$file) . "</span> $file</a></td>";
+                                        echo "<td style='vertical-align: middle; min-width: 20%' class='text-right'>" . date ("M d Y H:i:s",filemtime($path.$file)) . "</td>";
+                                        echo "<td style='vertical-align: middle; min-width: 10%' class='text-right'>" . getFileSize($path.$file) . "</td>";
                                         //echo "<td class='text-center' style='vertical-align: middle'>" . getFileMimeType($path.$file). "</td>";
                                         echo "</tr>";
 
@@ -150,8 +155,8 @@
 		</section>
 		
 		<footer class="text-center">
-			FIRE is made with <i class="fa fa-heart-o"></i> by Adjamilton Junior. Enjoy it! ;)<br>
-            For more information visit the <a href="https://github.com/ajunior/fire">Github</a> repository.
+			FIRE is made with <i class="fa fa-heart"></i> by Adjamilton Junior. Enjoy it! ;)<br>
+            For more information visit the <a href="https://github.com/ajunior/fire">GitHub</a> repository.
 		</footer>
 
 	</body>
