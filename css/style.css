@@ -54,7 +54,7 @@ table th {
 }
 
 hr {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 10px;
     border-top-color: #1b6d85;
 }
@@ -73,25 +73,25 @@ footer {
 }
 
 table {
+    vertical-align: middle;
     max-width: 100%;
     table-layout: fixed;
-}
-
-#filename {
-    max-width: 50%;
-
 }
 
 table td, th {
     word-wrap: break-word;
     overflow: hidden;
-    vertical-align: middle;
 }
 
 .breadcrumb {
     display: inline;
 }
 
-hr {
-    margin-top: 10px;
+table td:nth-child(n){
+    width: 100px;
+}
+
+.highlighted {
+    color: #261F1D;
+    background-color: #E5C37E;
 }

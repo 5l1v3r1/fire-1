@@ -3,6 +3,7 @@
     if ( isset($file) && file_exists($file) ) {
         set_time_limit(0);
         $mimeType = mime_content_type($file);
+        //var_dump($file);
 
         header( "Pragma: public" );
         header( "Expires: 0" );

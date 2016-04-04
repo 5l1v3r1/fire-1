@@ -78,7 +78,7 @@ function getFileMimeType ($file)
         case 'application/x-dosexec': // TODO: ask Font Awesome about a exec file icon
 
         // XML
-        case 'application/xml': // TODO: asj FA about a XML file icon
+        case 'application/xml': // TODO: ask FA about a XML file icon
 
         // BitTorrent
         case 'application/x-bittorrent': // TODO: ask FA about a bittorrent icon
